@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Syne';
+    src: url(./assets/fonts/Syne-VariableFont_wght.ttf);
+}
+
+html {
+    background-color: black;
+    color: white;
+    font-family: 'Syne';
+}
