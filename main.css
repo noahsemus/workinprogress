@@ -40,6 +40,8 @@ a {
     top: 0;
     left: 0;
     background: none;
+    border-radius: 200px;
+    border: solid white 0px;
     backface-visibility: hidden;
     z-index: 99999;
     display: flex;

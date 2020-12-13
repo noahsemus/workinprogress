@@ -35,16 +35,18 @@ gsap.ticker.add(() => {
 
 const cursorShrink = (e) => {
     gsap.to('.cursor', {
-        scale: .8,
-        duration: .6,
+        borderWidth: 4,
+        scale: .6,
+        duration: .4,
         ease: "power4.inOut"
     })
 };
 
 const cursorGrow = (e) => {
     gsap.to('.cursor', {
+        borderWidth: 0,
         scale: 1,
-        duration: .6,
+        duration: .4,
         ease: "power4.inOut"
     })
 };
@@ -53,6 +55,7 @@ const cursorGrow = (e) => {
 
 const navLink = document.querySelectorAll('.navLink');
 const underline = document.querySelectorAll('.underline');
+const link = document.querySelectorAll('.link');
 
 const underlineGrow = (item) => {
     gsap.to(underline[item], {
@@ -71,13 +74,23 @@ const underlineShrink = () => {
 navLink.forEach((value, index) => {
     value.addEventListener('mouseenter', e => {
         underlineGrow(index);
-        cursorShrink(e);
     })
 });
 
 navLink.forEach((value, index) => {
     value.addEventListener('mouseleave', e => {
         underlineShrink(index);
+    })
+});
+
+link.forEach((value, index) => {
+    value.addEventListener('mouseenter', e => {
+        cursorShrink(e);
+    })
+});
+
+link.forEach((value, index) => {
+    value.addEventListener('mouseleave', e => {
         cursorGrow(e);
     })
 });
