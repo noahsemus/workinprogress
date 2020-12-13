@@ -35,9 +35,7 @@ gsap.ticker.add(() => {
 
 const cursorShrink = (e) => {
     gsap.to('.cursor', {
-        width: 10,
-        height: 10,
-        backgroundColor: 'white',
+        scale: .8,
         duration: .6,
         ease: "power4.inOut"
     })
@@ -45,9 +43,7 @@ const cursorShrink = (e) => {
 
 const cursorGrow = (e) => {
     gsap.to('.cursor', {
-        width: 50,
-        height: 50,
-        backgroundColor: 'transparent',
+        scale: 1,
         duration: .6,
         ease: "power4.inOut"
     })
