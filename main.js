@@ -95,33 +95,54 @@ link.forEach((value, index) => {
     })
 });
 
-//Lottie
-
-var logoAnimation = lottie.loadAnimation({
-    container: document.getElementById('animLogo'), // Required
-    path: './assets/logo/mainLogoAnim.json', // Required
-    renderer: 'svg', // Required
-    loop: true, // Optional
-    autoplay: true, // Optional
-    rendererSettings: {
-        preserveAspectRatio: 'xMidYMid meet'
-    }
-})
-
 //Barba
+
+const blockerIn = () => {
+    return new Promise(resolve => {
+        let tl = gsap.timeline({
+            defaults: {
+                duration: 2,
+                ease: "power4.inOut"
+            }
+        });
+
+        tl.set('.blocker', {
+                transformOrigin: '0% 0%'
+            })
+            .to('.blocker', {
+                scaleX: 1,
+                onComplete: resolve
+            });
+    })
+}
+
+const blockerOut = () => {
+    return new Promise(resolve => {
+        let tl = gsap.timeline({
+            defaults: {
+                duration: 2,
+                ease: "power4.inOut"
+            }
+        });
+
+        tl.set('.blocker', {
+                transformOrigin: '100% 0%',
+            })
+            .to('.blocker', {
+                scaleX: 0,
+                transformOrigin: '100% 0%',
+            }, '<')
+            .set('.blocker', {
+                transformOrigin: '0% 0%',
+                onComplete: resolve
+            }, '<')
+    })
+}
 
 barba.init({
     transitions: [{
-        name: 'opacity-transition',
-        leave(data) {
-            return gsap.to(data.current.container, {
-                opacity: 0
-            });
-        },
-        enter(data) {
-            return gsap.from(data.next.container, {
-                opacity: 0
-            });
-        }
+        name: 'home-to-project',
+        leave: () => blockerIn(),
+        enter: () => blockerOut()
     }]
 });
