@@ -7,4 +7,83 @@ html {
     background-color: black;
     color: white;
     font-family: 'Syne';
+    cursor: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    height: 200px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    cursor: none;
+}
+
+.cursor {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: none;
+    border: solid white 3px;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.logo {
+    position: relative;
+    width: 280px;
+    height: 60px;
+    left: -10px;
+}
+
+#staticLogo {
+    display: none;
+}
+
+.navLink {
+    position: relative;
+    display: inline;
+}
+
+.underline {
+    width: 100%;
+    background-color: white;
+    height: 0px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    mix-blend-mode: difference;
+}
+
+.loadingCircle {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    border-radius: 200px;
+    border: solid white 3px;
 }

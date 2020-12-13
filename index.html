@@ -8,8 +8,46 @@
     <title>work in progress</title>
 </head>
 
-<body>
-    Hello world!
+<body data-barba="wrapper">
+    <div class="cursor">
+
+    </div>
+    <nav>
+        <img src="./assets/logo/logo.svg" class="logo" id="staticLogo">
+        <lottie-player src="./assets/logo/mainLogoAnim.json" class="logo" background="transparent" speed="1" autoplay></lottie-player>
+        <a class="navLink" href="somwhere">
+            <div class='underline'></div>
+            the collective
+        </a>
+        <a class="navLink" href="somwhere">
+            <div class='underline'></div>
+            our work
+        </a>
+        <a class="navLink" href="somwhere">
+            <div class='underline'></div>
+            maria
+        </a>
+        <a class="navLink" href="somwhere">
+            <div class='underline'></div>
+            noah
+        </a>
+        <a class="navLink" href="somwhere">
+            <div class='underline'></div>
+            nick
+        </a>
+    </nav>
+    <div class="loadingCircle"></div>
+
+    <main data-barba="container" data-barba-namespace="home">
+
+    </main>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="main.js"></script>
+
 </body>
 
 </html>
