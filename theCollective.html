@@ -5,16 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+    <link rel="preload" href="./assets/cursor/cursor02.gif" type="image/gif">
+    <link rel="preload" href="./assets/cursor/cursorClick.gif" type="image/gif">
     <title>work in progress</title>
 </head>
 
 <body data-barba="wrapper">
     <div class="cursor">
-        <img src="./assets/cursor/cursor.gif" class="cursorNormal">
+        <img src="./assets/cursor/cursor02.gif" class="cursorNormal">
+        <img src="./assets/cursor/cursorClick.gif" class="cursorClick">
     </div>
     <nav>
         <img src="./assets/logo/logo.svg" class="logo" id="staticLogo">
-        <lottie-player src="./assets/logo/mainLogoAnim.json" class="logo" background="transparent" speed="1" autoplay></lottie-player>
+        <a class='link' href="index.html">
+            <lottie-player src="./assets/logo/mainLogoAnim.json" class="logo" background="transparent" speed="1" autoplay></lottie-player>
+        </a>
         <a class="navLink link" href="theCollective.html">
             <div class='underline'></div>
             the collective
@@ -40,14 +45,27 @@
 
     <div class="blocker"></div>
 
-    <main data-barba="container" data-barba-namespace="collective">
+    <main data-barba="container" data-barba-namespace="home">
+        <div class="collectiveTop">
+            <h1 style="margin-left: -30px;">The Collective</h1>
+            <p class="p1">Maria, Noah, and Nick went to design school together and found that they tolerated each other. Thusly, they made this collective in order to keep tolerating each other's existence post-graduation. They will design things for you.<br><br>
 
+                hello@wip.nyc
+            </p>
+        </div>
+        <div class="collectiveImages">
+            <img src="./assets/images/collective/IMG-20200516-WA0000_2.jpg" class="collectiveImage" style="margin-left: 50%; height: 600px; margin-top: -15%;">
+            <img src="./assets/images/collective/IMG_20181006_124056.jpg" class="collectiveImage" style="margin-left: 15%; margin-top: -20%;">
+            <img src="./assets/images/collective/IMG_20200307_011058.jpg" class="collectiveImage" style="margin-left: 40%; margin-top: -5%;">
+            <img src="./assets/images/collective/IMG_5956.jpg" class="collectiveImage" style="margin-left: 10%; margin-top: -20%;">
+        </div>
     </main>
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@barba/prefetch@2.1.10/dist/barba-prefetch.umd.min.js"></script>
     <script src="main.js"></script>
 
 </body>
