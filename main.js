@@ -51,6 +51,36 @@ const cursorGrow = (e) => {
     })
 };
 
+const cursorToClick = (e) => {
+    gsap.to('.cursorNormal', {
+        y: 10,
+        opacity: 0,
+        duration: .2,
+        ease: 'power4.inOut'
+    })
+    gsap.to('.cursorClick', {
+        y: 0,
+        opacity: 1,
+        duration: .2,
+        ease: 'power4.inOut'
+    })
+}
+
+const cursorToNormal = (e) => {
+    gsap.to('.cursorNormal', {
+        y: 0,
+        opacity: 1,
+        duration: .2,
+        ease: 'power4.inOut'
+    })
+    gsap.to('.cursorClick', {
+        y: 10,
+        opacity: 0,
+        duration: .2,
+        ease: 'power4.inOut'
+    })
+}
+
 //Nav Links
 
 const navLink = document.querySelectorAll('.navLink');
@@ -85,13 +115,13 @@ navLink.forEach((value, index) => {
 
 link.forEach((value, index) => {
     value.addEventListener('mouseenter', e => {
-        cursorShrink(e);
+        cursorToClick(e);
     })
 });
 
 link.forEach((value, index) => {
     value.addEventListener('mouseleave', e => {
-        cursorGrow(e);
+        cursorToNormal(e);
     })
 });
 
@@ -139,10 +169,29 @@ const blockerOut = () => {
     })
 }
 
+const playVideos = () => {
+    let videos = document.querySelectorAll('video');
+
+    videos.forEach((v) => {
+        v.play();
+    });
+}
+
 barba.init({
     transitions: [{
         name: 'home-to-project',
         leave: () => blockerIn(),
         enter: () => blockerOut()
+    }],
+    views: [{
+        namespace: 'home',
+        afterEnter() {
+            playVideos();
+        }
+    }, {
+        namespace: 'about',
+        afterEnter() {
+            playVideos();
+        }
     }]
 });

@@ -10,11 +10,14 @@
 
 <body data-barba="wrapper">
     <div class="cursor">
-        <img src="./assets/cursor/cursor.gif" class="cursorNormal">
+        <img src="./assets/cursor/cursor02.gif" class="cursorNormal">
+        <img src="./assets/cursor/cursorClick.gif" class="cursorClick">
     </div>
     <nav>
         <img src="./assets/logo/logo.svg" class="logo" id="staticLogo">
-        <lottie-player src="./assets/logo/mainLogoAnim.json" class="logo" background="transparent" speed="1" autoplay></lottie-player>
+        <a class='link' href="index.html">
+            <lottie-player src="./assets/logo/mainLogoAnim.json" class="logo" background="transparent" speed="1" autoplay></lottie-player>
+        </a>
         <a class="navLink link" href="theCollective.html">
             <div class='underline'></div>
             the collective
@@ -41,7 +44,9 @@
     <div class="blocker"></div>
 
     <main data-barba="container" data-barba-namespace="home">
-        <div class="homeFillXXX"></div>
+        <div class="homeFill">
+            <video src="./assets/logo/logoPixelated.mp4" autoplay loop muted class="homeVideo"></video>
+        </div>
     </main>
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
